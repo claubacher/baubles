@@ -1,0 +1,379 @@
+$red: hsla(0, 100%, 60%, 1);
+$orange: hsla(25, 100%, 60%, 1);
+$yellow: hsla(50, 100%, 50%, 1);
+$green: #0a0;
+$blue: hsla(210, 100%, 45%, 1);
+$indigo: hsla(260, 60%, 60%, 1);
+$violet: hsla(310, 70%, 60%, 1);
+$white: #fff;
+$dark-gray: #bbb;
+$light-gray: #eee;
+$tr-gray: hsla(0, 0%, 50%, 0.3);
+$black: #111;
+
+html, body { height: 100%; margin: 0; }
+
+body {
+  background: $light-gray;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: $dark-gray;
+  ul {
+    list-style-type: none;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    li {
+      display: inline-block;
+      width: 33%;
+      text-align: center;
+      padding: 16px 0;
+    }
+  }
+}
+
+#title {
+  position: relative;
+  &:hover #toc {
+    display: block;
+  }
+}
+
+#toc {
+  position: absolute;
+  bottom: 54px;
+  background: #ccc;
+  width: 100%;
+  display: none;
+}
+
+#toc a {
+  display: block;
+  height: 24px;
+  padding: 16px 0;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+  &:hover {
+    color: $light-gray;
+  }
+}
+
+.boxes {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 60px;
+}
+
+.box {
+  min-width: 320px;
+  width: 29%;
+  height: 150px;
+  margin: 16px 2%;
+  display: inline-block;
+  position: relative;
+}
+
+@media screen and (max-width: 1100px) {
+  .box {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    margin: 16px 6%;
+    width: 88%;
+  }
+}
+
+@mixin label {
+  position: absolute;
+  height: 20px;
+  width: 300px;
+  top: calc(50% - 10px);
+  left: calc(50% - 150px);
+  font-family: sans-serif;
+  text-align: center;
+  word-spacing: 4px;
+}
+
+.red {
+  background: $red;
+}
+.orange {
+  background: $orange;
+}
+.yellow {
+  background: $yellow;
+}
+.green {
+  background: $green;
+}
+.blue {
+  background: $blue;
+}
+.indigo {
+  background: $indigo;
+}
+.violet {
+  background: $violet;
+}
+.white {
+  background: $white;
+}
+.black {
+  background: $black;
+}
+
+.bord-rad {
+  .red {
+    border-radius: 48px;
+    &:after {
+      @include label;
+      content: "border-radius: 48px;";
+    }
+  }
+  .orange {
+    border-radius: 48px 0;
+    &:after {
+      @include label;
+      content: "border-radius: 48px 0;";
+    }
+  }
+  .yellow {
+    border-radius: 50%;
+    &:after {
+      @include label;
+      content: "border-radius: 50%;";
+    }
+  }
+  .green {
+    border-radius: 48px 50%;
+    &:after {
+      @include label;
+      content: "border-radius: 48px 50%;";
+    }
+  }
+  .blue {
+    border-radius: 24px 48px 0;
+    &:after {
+      @include label;
+      content: "border-radius: 24px 48px 0;";
+    }
+  }
+  .indigo {
+    border-radius: 10% / 50%;
+    &:after {
+      @include label;
+      content: "border-radius: 10% / 50%;";
+    }
+  }
+  .violet {
+    border-radius: 64px 16px 16px 64px / 64px 16px 64px 16px;
+    &:after {
+      @include label;
+      content: "border-radius: 64px 16px 16px 64px / 64px 16px 64px 16px;";
+    }
+  }
+  .white {
+    border-top-left-radius: 50%;
+    border-top-right-radius: 6em;
+    border-bottom-right-radius: 25%;
+    border-bottom-left-radius: 96px;
+    &:after {
+      @include label;
+      width: 250px;
+      text-align: left;
+      margin-top: -24px;
+      margin-left: 10%;
+      content: "border-top-left-radius: 50%; border-top-right-radius: 6em; border-bottom-right-radius: 25%; border-bottom-left-radius: 96px;";
+    }
+  }
+  .black {
+    border-top-left-radius: 48px 96px;
+    border-top-right-radius: 96px 48px;
+    border-bottom-right-radius: 48px 96px;
+    border-bottom-left-radius: 96px 48px;
+    &:after {
+      @include label;
+      width: 280px;
+      text-align: left;
+      margin-top: -24px;
+      margin-left: 4%;
+      content: "border-top-left-radius: 48px 96px; border-top-right-radius: 96px 48px; border-bottom-right-radius: 48px 96px; border-bottom-left-radius: 96px 48px";
+      color: $light-gray;
+    }
+  }
+}
+
+.box-shad {
+  .red {
+    box-shadow: 8px 8px #000;
+    &:after {
+      @include label;
+      content: "box-shadow: 8px 8px #000;";
+    }
+  }
+  .orange {
+    box-shadow: 8px 8px 8px #000;
+    &:after {
+      @include label;
+      content: "box-shadow: 8px 8px 8px #000;";
+    }
+  }
+  .yellow {
+    box-shadow: 0 0 32px #000;
+    &:after {
+      @include label;
+      content: "box-shadow: 0 0 32px #000;";
+    }
+  }
+  .green {
+    box-shadow: -8px -8px 32px #000;
+    &:after {
+      @include label;
+      content: "box-shadow: -8px -8px 32px #000;"
+    }
+  }
+  .blue {
+    box-shadow: 8px 8px 32px #000 inset;
+    &:after {
+      @include label;
+      content: "8px 8px 32px #000 inset;";
+    }
+  }
+  .indigo {
+    box-shadow: 8px 8px #000, -8px -8px #999;
+    &:after {
+      @include label;
+      margin-left: 6%;
+      width: 240px;
+      content: "box-shadow: 8px 8px #000, -8px -8px #999;";
+    }
+  }
+  .violet {
+    box-shadow: 16px 0 #444, -16px 0 #444, 0 -16px #ccc, 0 16px #ccc;
+    border-radius: 12px;
+    &:after {
+      @include label;
+      width: 280px;
+      margin-left: 2%;
+      margin-top: -15px;
+      content: "box-shadow: 16px 0 #444, -16px 0 #444, 0 -16px #ccc, 0 16px #ccc; border-radius: 12px;";
+    }
+  }
+  .white {
+    box-shadow: 0 -8px #000, 8px 0 #444, 0 8px #888, -8px 0 #ccc;
+    &:after {
+      @include label;
+      top: 60px;
+      content: "box-shadow: 0 -8px #000, 8px 0 #444, 0 8px #888, -8px 0 #ccc;"
+    }
+  }
+  .black {
+    box-shadow: -8px -8px $tr-gray,
+                -8px 8px $tr-gray,
+                8px -8px $tr-gray,
+                8px 8px $tr-gray,
+                -16px -16px $tr-gray,
+                -16px 16px $tr-gray,
+                16px -16px $tr-gray,
+                16px 16px $tr-gray;
+    &:after {
+      @include label;
+      width: 345px;
+      margin-top: -58px;
+      margin-left: -5%;
+      content: "box-shadow: -8px -8px hsla(0, 0%, 50%, 0.3), -8px 8px hsla(0, 0%, 50%, 0.3), 8px -8px hsla(0, 0%, 50%, 0.3), 8px 8px hsla(0, 0%, 50%, 0.3), -16px -16px hsla(0, 0%, 50%, 0.3), -16px 16px hsla(0, 0%, 50%, 0.3), 16px -16px hsla(0, 0%, 50%, 0.3), 16px 16px hsla(0, 0%, 50%, 0.3);";
+      color: $light-gray;
+    }
+  }
+}
+
+@mixin prefix($name, $arg) {
+  -webkit-#{$name}: #{$arg};
+     -moz-#{$name}: #{$arg};
+       -o-#{$name}: #{$arg};
+          #{$name}: #{$arg};
+}
+
+.transform {
+  font-size: 18px;
+  .red {
+    @include prefix(transform, scale(0.5));
+    &:after {
+      @include label;
+      content: "transform: scale(0.5);";
+    }
+  }
+  .orange {
+    @include prefix(transform, translateX(20%));
+    &:after {
+      @include label;
+      content: "transform: translateX(20%);";
+    }
+  }
+  .yellow {
+    @include prefix(transform, rotate(45deg));
+    &:after {
+      @include label;
+      content: "transform: rotate(45deg);";
+    }
+  }
+  .green {
+    @include prefix(transform, skewY(-30deg));
+    &:after {
+      @include label;
+      content: "transform: skewY(-30deg);";
+    }
+  }
+  .blue {
+    @include prefix(transform, perspective(300px) rotateX(45deg));
+    &:after {
+      @include label;
+      content: "transform: perspective(300px) rotateX(45deg);";
+    }
+  }
+  .indigo {
+    @include prefix(transform, perspective(300px) rotateY(-35deg));
+    &:after {
+      @include label;
+      content: "transform: perspective(300px) rotateY(-35deg);";
+    }
+  }
+  .violet {
+    @include prefix(transform, rotateY(180deg));
+    &:after {
+      @include label;
+      content: "transform: rotateY(180deg);";
+    }
+  }
+  .white {
+    @include prefix(transform, scale(1.25) skew(30deg, 15deg) translateY(-20px));
+    &:after {
+      @include label;
+      margin-top: -20px;
+      content: "transform: scale(1.25) skew(30deg, 15deg) translateY(-20px);";
+    }
+  }
+  .black {
+    @include prefix(transform, perspective(1000px) rotateX(45deg) rotateY(-15deg) rotateZ(-15deg));
+    &:after {
+      @include label;
+      margin-top: -20px;
+      content: "transform: perspective(1000px) rotateX(45deg) rotateY(-15deg) rotateZ(-15deg)";
+      color: $light-gray;
+    }
+  }
+}
