@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HTML5 canvas drawing app">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ripplr</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="settings">
+      <h1>Ripplr</h1>
+      <fieldset>
+        <label for="radius-width">Initial radius:</label>
+        <input type="number" min="5" max="50" step="5" name="radius-width" id="radius-width" value="10" /> px
+      </fieldset>
+      <fieldset>
+        <label for="radius-change-amt"> Ripples increase radius by </label>
+        <input type="number" min="5" max="50" step="5" name="radius-change-amt" id="radius-change-amt" value="20" /> px
+      </fieldset>
+      <fieldset>
+        <label for="stroke-width">Initial stroke width:</label>
+        <input type="number" min="1" max="30" name="stroke-width" id="stroke-width" value="8" /> px
+      <fieldset>
+      </fieldset>
+        Ripples
+        <select name="stroke-change" id="stroke-change">
+          <option value="decrement">decrease</option>
+          <option value="increment">increase</option>
+        </select>
+        <label for="stroke-change-amt"> stroke width by </label>
+        <input type="number" min="0.1" max="2.0" step="0.1" name="stroke-change-amt" id="stroke-change-amt" value="0.5" /> px
+      </fieldset>
+      <button id="clear">Clear Canvas</button>
+    </div>
+    <canvas id="main" height="600px" width="1000px"></canvas>
+  </div>
+  <script src="js/ripplr.js"></script>
+</body>
+</html>
